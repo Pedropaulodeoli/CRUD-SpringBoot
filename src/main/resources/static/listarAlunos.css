@@ -1,0 +1,176 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 60px;
+    background-color: #1e3a8a; /* azul escuro */
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #3b82f6; /* azul claro */
+}
+
+.sidebar i {
+    font-size: 24px;
+    margin-right: 10px;
+    min-width: 24px;
+    text-align: center;
+}
+
+.sidebar span {
+    display: none;
+    white-space: nowrap;
+}
+
+.sidebar:hover span {
+    display: inline;
+}
+
+/* Container */
+.container {
+    margin-left: 60px;
+    flex: 1;
+    padding: 40px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar:hover ~ .container {
+    margin-left: 200px;
+}
+
+/* Cabeçalho */
+h2 {
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.search-bar label {
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 5px rgba(30,58,138,0.5);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #3b82f6;
+}
+
+/* Mensagem */
+p {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Lista de alunos */
+.aluno-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.aluno-list li {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.aluno-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Botões de ação */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e3a8a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
+
+.btn-action i {
+    margin-right: 8px;
+}
+
+.btn-action:hover {
+    background-color: #3b82f6;
+}

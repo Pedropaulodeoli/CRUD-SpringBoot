@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ops! Algo deu errado</title>
+  <link rel="stylesheet" th:href="@{/erro.css}"/>
+</head>
+<body>
+  <main class="error-wrap">
+    <section class="error-card" role="alert">
+      <!-- Ícone SVG (sem dependências externas) -->
+      <div class="error-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+          <path d="M11 7h2v6h-2V7zm0 8h2v2h-2v-2z"/>
+          <path d="M1 21h22L12 2 1 21zM12 6.99 18.93 20H5.07L12 6.99z"/>
+        </svg>
+      </div>
+
+      <h1>Ops! Algo deu errado</h1>
+      <p>Houve um problema ao processar sua solicitação. Tente novamente em instantes ou volte para a página inicial.</p>
+
+        <img src="../../../../../../../../Desktop/erro/image-erro.png" alt="Ilustração do erro" class="error-image"/>
+    
+      <div class="actions">
+        <a href="/" class="btn primary">Voltar ao início</a>
+        <a href="javascript:history.back()" class="btn">Tentar novamente</a>
+      </div>
+
+      <!-- Bloco de detalhes técnicos -->
+      <details class="error-details">
+        <summary>Detalhes técnicos</summary>
+        <pre>
+        <!-- Exemplos (substitua pelo que desejar/thymeleaf):
+        Status: <span th:text="${status}">500</span>
+        Erro: <span th:text="${error}">Internal Server Error</span>
+        Mensagem: <span th:text="${message}">NullPointerException</span>
+        Path: <span th:text="${path}">/minha-rota</span>
+                -->
+        </pre>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 60px;
+    background-color: #1e3a8a; /* azul escuro */
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #3b82f6; /* azul claro */
+}
+
+.sidebar i {
+    font-size: 24px;
+    margin-right: 10px;
+    min-width: 24px;
+    text-align: center;
+}
+
+.sidebar span {
+    display: none;
+    white-space: nowrap;
+}
+
+.sidebar:hover span {
+    display: inline;
+}
+
+/* Container do formulário */
+.container {
+    margin-left: 60px;
+    flex: 1;
+    padding: 40px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar:hover ~ .container {
+    margin-left: 200px;
+}
+
+/* Formulário */
+h2 {
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #3b82f6;
+}

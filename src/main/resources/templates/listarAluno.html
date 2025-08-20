@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Alunos</title>
+    <link rel="stylesheet" th:href="@{/listarAlunos.css}">
+</head>
+<body>
+<!-- Menu lateral igual ao cadastro -->
+<div class="sidebar">
+    <a href="/"><i class="fa fa-home"></i><span>Início</span></a>
+    <a href="/cadastrar"><i class="fa fa-user-plus"></i><span>Cadastrar Aluno</span></a>
+    <a href="/listarAluno"><i class="fa fa-list"></i><span>Listar Alunos</span></a>
+</div>
+
+<div class="container">
+    <h2>Alunos Cadastrados</h2>
+
+    <form action="/listarAluno" method="POST">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <div class="search-bar">
+            <label for="search">Pesquisar por nome</label>
+            <input type="text" id="search" name="search" placeholder="Proucurar">
+            <button type="submit">Buscar</button>
+        </div>
+    </form>
+
+    <p th:text="${mensagem}" style="color:red;"></p>
+
+    <div class="aluno-list">
+        <!-- Exemplo de como listar alunos com Thymeleaf -->
+        <ul>
+            <li th:each="aluno : ${alunos}">
+                <span th:text="${aluno.nome}">Nome do Aluno</span> -
+                <span th:text="${aluno.serie}">Série</span> -
+                <span th:text="${aluno.idade}">Idade</span> -
+                <span th:text="${aluno.letivo}">Ano Letivo</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="buttons">
+        <a href="/" class="btn-action"><i class="fa fa-arrow-left"></i> Voltar</a>
+        <a href="/cadastrar" class="btn-action"><i class="fa fa-plus"></i> Cadastrar Aluno</a>
+    </div>
+</div>
+
+<!-- FontAwesome para ícones -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
