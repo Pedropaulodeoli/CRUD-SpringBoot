@@ -40,5 +40,18 @@ public class UserService {
         return userRepository.findByNomeContainingIgnoreCase(termo);
     }
 
+    public boolean excluirAluno (String termo) {
+        try {
+            if(!userRepository.existsByNomeIgnoreCase(termo)) {
+                return false;
+            } else {
+                userRepository.deleteByNomeIgnoreCase(termo);
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 
 }
